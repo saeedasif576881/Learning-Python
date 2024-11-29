@@ -34,3 +34,13 @@ dist = {
 }
 
 print(dist)
+
+
+
+a = input("Enter the first No : ")
+b = input("Enter the Second No : ")
+
+a = int(a)
+b = int(b)
+
+print(a+b)
