@@ -8,7 +8,6 @@ import random
     
 # print(Role.Admin.value)   
 
-list1 = ['saeed', 'waheed','Ahsan','faheem']
-saeed =random.choice(list1)
+list1 = ['saeed', 'waheed','Ahsan','faheem','waseem ']
 
-print(saeed)
+print(random.choice(list1))
