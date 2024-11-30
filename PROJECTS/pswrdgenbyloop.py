@@ -8,20 +8,26 @@ lowercase_alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l
 uppercase_alphabets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 
                        'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 print('Welcome to the PyPassword Generator!')
-
 Uppercase = int(input("How many Uppercase Alphabets would you like in your password? \n"))
-pasward_list = random.choices(uppercase_alphabets,k=Uppercase)
-
 Lowercase = int(input("How many Lowercase Alphabets would you like in your password? \n"))
-pasward_list.extend(random.choices(lowercase_alphabets,k=Lowercase))
 Numbers = int(input("How many Numbers would you like in your password? \n"))
-pasward_list.extend(random.choices(numbers,k=Numbers))
 Special_Char = int(input("How many Special Characters would you like in your password? \n"))
-pasward_list.extend(random.choices(special_characters,k=Special_Char))
-print(pasward_list)
-random.shuffle(pasward_list)
-print(pasward_list)
-Final_passward = ' '.join(pasward_list)
-print(f'Your Passward is : {Final_passward}')
+passward= []
+for x in range (Uppercase):
+    passward.append(random.choice(uppercase_alphabets))
+    
+for x in range (Lowercase):
+    passward.append(random.choice(lowercase_alphabets))
+   
+for x in range (Numbers):
+    passward.append(random.choice(numbers))
+    
+for x in range (Special_Char):
+    passward.append(random.choice(special_characters))
+    
+print(passward)   
+random.shuffle(passward)
+print(passward)
 
-
+Final_pas = ''.join(passward)
+print(f"Your Final Passward is: {Final_pas}")
