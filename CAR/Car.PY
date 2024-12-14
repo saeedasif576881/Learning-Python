@@ -20,6 +20,7 @@ class Car :
         elif choices =='n':
             exit()
             
+  
     def gear1(self):
         print(f"{self.company} {self.name} is in gear 1 and the speed is 60" )
         self.curent_speed=60
@@ -50,50 +51,33 @@ class Car :
                     self.gear4()
                 else :
                     print("Enter a valid choice")
-        
+    
+     
+         
+         
     def Accelerate(self):
     
         print(f"Max Speed = {self.maxSpeed}  Current Speed ={self.curent_speed}")
     
-        while self.curent_speed <= self.maxSpeed:
+        while self.curent_speed < self.maxSpeed:
             
             if self.curent_speed <= 60:
                 choices = input(f"You are at speed {self.curent_speed} Do you want to Shif to gear 2 Press Y if not Press N ").lower()
-                if choices == "y":
-                    self.gear2()
-                elif choices=='n':
-                    print(f"car is at a speed of {self.curent_speed} Km/h")
-                    self.curent_speed +=30
-                else :
-                    print("Enter a valid choice")
+                gear = str(input(f"You are at speed {self.curent_speed} To Which gear you want to shift for gear 1 press 1, for gear 2 press 2 for gear 3 press 3, for gear 4 press 4 "))
+                self.gearchoice(choices,gear)
             if self.curent_speed <= 120:
                 choices = input(f"You are at speed {self.curent_speed} Do you want to Shif to gear 3 Press Y if not Press N ").lower()
-                if choices == "y":
-                    self.gear3()
-                elif choices=='n':
-                    print(f"car is at a speed of {self.curent_speed} Km/h")
-                    self.curent_speed +=30
-                else :
-                    print("Enter a valid choice")
+                gear = str(input(f"You are at speed {self.curent_speed} To Which gear you want to shift for gear 1 press 1, for gear 2 press 2 for gear 3 press 3, for gear 4 press 4 "))
+                self.gearchoice(choices,gear)
             if self.curent_speed <= 180:
                 choices = input(f"You are at speed {self.curent_speed} Do you want to Shif to gear 4 Press Y if not Press N ").lower()
-                if choices == "y":
-                    self.gear4()
-                elif choices=='n':
-                    print(f"car is at a speed of {self.curent_speed} Km/h")
-                    self.curent_speed +=30
-                else :
-                    print("Enter a valid choice")
+                gear = str(input(f"You are at speed {self.curent_speed} To Which gear you want to shift for gear 1 press 1, for gear 2 press 2 for gear 3 press 3, for gear 4 press 4 "))
+                self.gearchoice(choices,gear)
             
             if self.curent_speed >= 220:
                 choices = input(f"You are at speed {self.curent_speed} To which gear  you want to shift press Y for shift and N for remain in the same gear").lower()
-                if choices == "y":
-                    self.gearshif()
-                elif choices=='n':
-                    print(f"car is at a speed of {self.curent_speed} Km/h")
-                    self.curent_speed +=30
-                else :
-                    print("Enter a valid choice")
+                gear = str(input(f"You are at speed {self.curent_speed} To Which gear you want to shift for gear 1 press 1, for gear 2 press 2 for gear 3 press 3, for gear 4 press 4 "))
+                self.gearchoice(choices,gear)
             
             if self.curent_speed>=self.maxSpeed-50:
                 choices = input("If you want to Apply Brakes  Press  Y if not Press N ").lower()
@@ -122,7 +106,16 @@ class Car :
                exit()
         else :
                 print("Enter a valid choice")
-        
+    
+    def gearchoice(self,choices,gear):
+         if choices == "y":
+                    self.gear[gear]()
+         elif choices=='n':
+                    print(f"car is at a speed of {self.curent_speed} Km/h")
+                    self.curent_speed +=30
+         else :
+                    print("Enter a valid choice")
+              
     def Brake(self):
         self.curent_speed = 20
         print(f"Brake applied on {self.company} {self.name} and Speed = {self.curent_speed} Km/h")
